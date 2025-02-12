@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import "./Statistics.css"
 import {
   Typography,
   TextField,
@@ -40,7 +41,7 @@ const Statistics = () => {
   },[month]);
 
   return (
-    <div>
+    <div className="stat-container">
       <h1>Statistics</h1>
       <FormControl>
         <InputLabel id="demo-simple-select-label" sx={{ minWidth: "200px" }}>
@@ -68,10 +69,10 @@ const Statistics = () => {
         </Select>
       </FormControl>
 
-      <Box>
-      <Typography variant="h5">Total Sale  {data.totalSale}</Typography>
-      <Typography variant="h5">Total Sale Item {data?.countNotsale}</Typography>
-      <Typography variant="h5">Total not Sale Item {data?.countSale}</Typography>
+      <Box sx={{mt:"20px", p:"30px", bgcolor:'#ffe0b2', borderRadius:"15px"}}>
+      <Typography variant="h5">Total Sale - {data.totalSale}</Typography>
+      <Typography variant="h5">Total Sale Item - {data?.countNotsale}</Typography>
+      <Typography variant="h5">Total not Sale Item - {data?.countSale}</Typography>
       </Box>
     </div>
   );

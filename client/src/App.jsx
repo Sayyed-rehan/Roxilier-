@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import axios from "axios";
 import Statistics from "./Components/Statistics/Statistics";
 import Barchart from "./Components/Barchart/Barchart";
+import "./App.css"
 import {
   Typography,
   TextField,
@@ -10,6 +11,7 @@ import {
   MenuItem,
   InputLabel,
   TableContainer,
+  Stack,
   Table,
   TableHead,
   TableRow,
@@ -65,13 +67,14 @@ const App = () => {
   return (
     <div className="container">
       <Typography variant="h3">Dashboard</Typography>
+      <Stack direction="row" sx={{display:"flex", justifyContent:"space-evenly", mt:"20px"}}>
       <TextField
-        required
-        id="outlined-required"
-        label="Required"
-        value={AllTransactionsquery.search}
-        name="search"
-        onChange={(e) => handleChnage(e)}
+      
+          id="outlined-required"
+          label="Required"
+          value={AllTransactionsquery.search}
+          name="search"
+          onChange={(e) => handleChnage(e)}
       />
 
       <FormControl>
@@ -92,6 +95,7 @@ const App = () => {
           <MenuItem value={"12"}>Dec</MenuItem>
         </Select>
       </FormControl>
+      </Stack>
 
       <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">

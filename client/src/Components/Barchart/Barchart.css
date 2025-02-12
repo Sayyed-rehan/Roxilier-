@@ -1,4 +1,9 @@
 
 .barchart-container{
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px
 }

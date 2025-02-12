@@ -50,7 +50,7 @@ const Barchart = () => {
   }, [month]);
   return (
     <div className="barchart-container">
-      <h1>Barcahrt</h1>
+      <h1>Barchart</h1>
       <FormControl>
         <InputLabel id="demo-simple-select-label" sx={{ minWidth: "200px" }}>
           Select Month
