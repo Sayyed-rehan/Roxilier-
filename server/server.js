@@ -284,16 +284,16 @@ app.get("/for_bar_chart/:month", async(req, res) => {
         {
             $group: {
               _id:null,
-                countPriceRange0To100: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 0] }, { $lte: ["$price", 100] } ] }, 1, 0 ] } },
-                countPriceRange101To200: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 101] }, { $lte: ["$price", 200] } ] }, 1, 0 ] } },
-                countPriceRange201To300: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 201] }, { $lte: ["$price", 300] } ] }, 1, 0 ] } },
-                countPriceRange301To400: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 301] }, { $lte: ["$price", 400] } ] }, 1, 0 ] } },
-                countPriceRange401To500: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 401] }, { $lte: ["$price", 500] } ] }, 1, 0 ] } },
-                countPriceRange501To600: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 501] }, { $lte: ["$price", 600] } ] }, 1, 0 ] } },
-                countPriceRange601To700: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 601] }, { $lte: ["$price", 700] } ] }, 1, 0 ] } },
-                countPriceRange701To800: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 701] }, { $lte: ["$price", 800] } ] }, 1, 0 ] } },
-                countPriceRange801To900: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 801] }, { $lte: ["$price", 900] } ] }, 1, 0 ] } },
-                countPriceRange901To1000: { $sum: { $cond: [ { $and: [ { $gte: ["$price", 901] }, { $lte: ["$price", 1000] } ] }, 1, 0 ] } },
+                "0To-100": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 0] }, { $lte: ["$price", 100] } ] }, 1, 0 ] } },
+                "101-200": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 101] }, { $lte: ["$price", 200] } ] }, 1, 0 ] } },
+                "201-300": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 201] }, { $lte: ["$price", 300] } ] }, 1, 0 ] } },
+                "301-400": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 301] }, { $lte: ["$price", 400] } ] }, 1, 0 ] } },
+                "401-500": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 401] }, { $lte: ["$price", 500] } ] }, 1, 0 ] } },
+                "501-600": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 501] }, { $lte: ["$price", 600] } ] }, 1, 0 ] } },
+                "601-700": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 601] }, { $lte: ["$price", 700] } ] }, 1, 0 ] } },
+                "701-800": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 701] }, { $lte: ["$price", 800] } ] }, 1, 0 ] } },
+                "800-900": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 801] }, { $lte: ["$price", 900] } ] }, 1, 0 ] } },
+                "901-above": { $sum: { $cond: [ { $and: [ { $gte: ["$price", 901] }, { $lte: ["$price", 1000] } ] }, 1, 0 ] } },
 
 
 
