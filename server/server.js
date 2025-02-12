@@ -50,20 +50,20 @@ app.get("/", async (req, res) => {
 //     const { search, page , perPage  } = req.query;
 //     const query = {};
 
-//     // Search criteria
+// 
 //     if (search) {
 //         query.$or = [
 //           { title: { $regex: search, $options: "i" } },
 //           { description: { $regex: search, $options: "i" } }
 //         ];
 
-//         // Check if the search input is a valid number
+
 //         if (!isNaN(parseFloat(search))) {
 //           query.$or.push({ price: parseFloat(search) });
 //         }
 //       }
 
-//     // Pagination parameters
+//   
 //     const skipValue = (page - 1) * perPage;
 
 //     const data = await Transaction.find(query).skip(parseInt(skipValue)).limit(perPage)
@@ -87,22 +87,22 @@ app.get("/transactions", async (req, res) => {
       { description: { $regex: search, $options: "i" } },
     ];
 
-    // Check if the search input is a valid number for price
+  
     if (!isNaN(parseFloat(search))) {
       query.$or.push({ price: parseFloat(search) });
     }
   }
 
-  // Pagination parameters
+
   const skipValue = (page - 1) * perPage;
 
   try {
     console.log(query);
 
-    // Count total matching documents
+   
     const totalCount = await Transaction.countDocuments(query);
 
-    // Fetch matching documents with pagination
+  
     const data = await Transaction.find(query)
       .skip(parseInt(skipValue))
       .limit(parseInt(perPage));
@@ -121,20 +121,20 @@ app.get("/ass", async (req, res) => {
   const { search, year, month, page = 1, perPage = 10 } = req.query;
   const query = {};
 
-  // Search criteria
+  
   if (search) {
     query.$or = [
       { title: { $regex: search, $options: "i" } },
       { description: { $regex: search, $options: "i" } },
     ];
 
-    // Check if the search input is a valid number for price
+    
     if (!isNaN(parseFloat(search))) {
       query.$or.push({ price: parseFloat(search) });
     }
   }
 
-  // Month filtering
+
   if (month) {
     query.$expr = {
       $and: [
@@ -148,16 +148,16 @@ app.get("/ass", async (req, res) => {
     };
   }
 
-  // Pagination parameters
+  
   const skipValue = (page - 1) * perPage;
 
   try {
     console.log(query);
 
-    // Count total matching documents
+   
     const totalCount = await Transaction.countDocuments(query);
 
-    // Fetch matching documents with pagination
+
     const data = await Transaction.find(query)
       .skip(parseInt(skipValue))
       .limit(parseInt(perPage));
@@ -302,9 +302,7 @@ app.get("/for_bar_chart/:month", async(req, res) => {
     ]);
 
         res.json({
-            // countPriceRange0To100: data[0].countPriceRange0To100,
-            // countPriceRange101To200: data[0].countPriceRange101To200,
-            // countPriceRange201To300: data[0].countPriceRange201To300,
+            
             countPriceRange: data
 
 

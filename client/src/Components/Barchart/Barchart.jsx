@@ -85,10 +85,10 @@ const Barchart = () => {
    }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name"  
-              // ticks={xValues.sort()} // gets all of the values
-              interval={0} // display all of values, instead of the default 5
+          
+              interval={0} 
               angle={-65}
-              labe  // force text to be 90, reading towards the graph
+              labe  
               textAnchor="end"/>
       <YAxis />
       <Tooltip />
